@@ -1,0 +1,715 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <title>AVIZ - Food Delivery</title>
+
+  <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+  <!-- =========================
+       NAVBAR
+  ========================== -->
+
+  <header class="navbar">
+
+    <div class="logo">
+      AVIZ<span>.</span>
+    </div>
+
+    <div class="location">
+      📍 Hyderabad
+    </div>
+
+    <div class="search-box">
+      🔍
+      <input
+        type="text"
+        id="searchInput"
+        placeholder="Search for restaurants or food..."
+        oninput="searchFood()"
+      >
+    </div>
+
+    <button
+      class="login-btn"
+      onclick="openLogin()">
+      Login
+    </button>
+
+    <button
+      class="cart-btn"
+      onclick="openCart()">
+      🛒 Cart
+      <span id="cartCount">0</span>
+    </button>
+
+  </header>
+
+
+  <!-- =========================
+       HERO
+  ========================== -->
+
+  <section class="hero">
+
+    <div class="hero-content">
+
+      <h1>
+        Delicious food,
+        <span>delivered fast.</span>
+      </h1>
+
+      <p>
+        Order your favourite meals from the best restaurants
+        around Hyderabad.
+      </p>
+
+      <div class="hero-search">
+
+        <input
+          type="text"
+          id="heroSearchInput"
+          placeholder="Search for pizza, biryani, burgers..."
+        >
+
+        <button onclick="heroSearch()">
+          Search
+        </button>
+
+      </div>
+
+    </div>
+
+  </section>
+
+
+  <!-- =========================
+       MAIN CONTENT
+  ========================== -->
+
+  <main class="container">
+
+
+    <!-- =========================
+         CATEGORIES
+    ========================== -->
+
+    <section>
+
+      <div class="section-header">
+
+        <h2>
+          What's on your mind?
+        </h2>
+
+        <button onclick="filterCategory('all')">
+          View All
+        </button>
+
+      </div>
+
+
+      <div class="categories">
+          onclick="filterCategory('pizza')">
+          </div>
+        </div>
+            🍔
+          </div>
+
+          <p>Burgers</p>
+
+        <div
+          class="category"
+          onclick="filterCategory('biryani')">
+
+            🍛
+          </div>
+
+          <p>Biryani</p>
+
+        </div>
+
+
+        <div
+          class="category"
+          onclick="filterCategory('noodles')">
+
+          <div class="category-icon">
+            🍜
+          </div>
+
+          <p>Noodles</p>
+
+        </div>
+
+
+        <div
+          class="category"
+          onclick="filterCategory('dessert')">
+
+          <div class="category-icon">
+            🍰
+          </div>
+
+          <p>Desserts</p>
+
+        </div>
+
+
+        <div
+          class="category"
+          onclick="filterCategory('drinks')">
+
+          <div class="category-icon">
+            🥤
+          </div>
+
+          <p>Drinks</p>
+
+        </div>
+
+      </div>
+
+    </section>
+
+
+    <!-- =========================
+         RESTAURANTS
+    ========================== -->
+
+    <section id="restaurants">
+
+      <div class="section-header">
+
+        <h2>
+          Top restaurants near you
+        </h2>
+
+        <button onclick="viewAllRestaurants()">
+          View All
+        </button>
+
+      </div>
+
+
+      <div class="restaurant-grid">
+
+
+        <!-- PIZZA -->
+
+        <div
+          class="restaurant-card"
+          data-category="pizza">
+
+          <div class="food-image pizza">
+
+            🍕
+
+            <div class="offer">
+              30% OFF
+            </div>
+
+          </div>
+
+          <div class="restaurant-info">
+
+            <h3>
+              Pizza Paradise
+            </h3>
+
+            <p>
+              Italian • Pizza • Fast Food
+            </p>
+
+            <div class="rating">
+              ⭐ 4.5
+              <span> • 30 mins • ₹300 for two</span>
+            </div>
+
+            <button
+              onclick="addToCart('Margherita Pizza', 249)">
+              Add Pizza ₹249
+            </button>
+
+          </div>
+
+        </div>
+
+
+        <!-- BURGER -->
+
+        <div
+          class="restaurant-card"
+          data-category="burger">
+
+          <div class="food-image burger">
+
+            🍔
+
+            <div class="offer">
+              20% OFF
+            </div>
+
+          </div>
+
+          <div class="restaurant-info">
+
+            <h3>
+              Burger House
+            </h3>
+
+            <p>
+              Burgers • American • Fast Food
+            </p>
+
+            <div class="rating">
+              ⭐ 4.3
+              <span> • 25 mins • ₹250 for two</span>
+            </div>
+
+            <button
+              onclick="addToCart('Classic Burger', 199)">
+              Add Burger ₹199
+          <div class="category-icon">
+
+
+        </div>
+          <div class="category-icon">
+
+          class="category"
+          onclick="filterCategory('burger')">
+
+        <div
+
+
+            </button>
+          <p>Pizza</p>
+
+
+            🍕
+          <div class="category-icon">
+          class="category"
+        <div
+
+
+          </div>
+
+
+        </div>
+
+
+
+        <!-- BIRYANI -->
+
+
+        <div
+
+          class="restaurant-card"
+          data-category="biryani">
+
+
+          <div class="food-image biryani">
+
+            🍛
+
+            <div class="offer">
+              25% OFF
+
+            </div>
+
+
+          </div>
+
+          <div class="restaurant-info">
+
+            <h3>
+              Hyderabad Biryani House
+            </h3>
+
+            <p>
+              Biryani • Indian • Mughlai
+            </p>
+
+            <div class="rating">
+              ⭐ 4.7
+              <span> • 35 mins • ₹400 for two</span>
+            </div>
+
+            <button
+              onclick="addToCart('Chicken Biryani', 299)">
+              Add Biryani ₹299
+            </button>
+
+          </div>
+
+        </div>
+
+
+        <!-- NOODLES -->
+
+        <div
+          class="restaurant-card"
+          data-category="noodles">
+
+          <div class="food-image noodles">
+
+            🍜
+
+            <div class="offer">
+              15% OFF
+            </div>
+
+          </div>
+
+          <div class="restaurant-info">
+
+            <h3>
+              Wok Express
+            </h3>
+
+            <p>
+              Chinese • Noodles • Asian
+            </p>
+
+            <div class="rating">
+              ⭐ 4.2
+              <span> • 30 mins • ₹350 for two</span>
+            </div>
+
+            <button
+              onclick="addToCart('Veg Hakka Noodles', 179)">
+              Add Noodles ₹179
+            </button>
+
+          </div>
+
+        </div>
+
+
+        <!-- DESSERT -->
+
+        <div
+          class="restaurant-card"
+          data-category="dessert">
+
+          <div class="food-image dessert">
+
+            🍰
+
+            <div class="offer">
+              10% OFF
+            </div>
+
+          </div>
+
+          <div class="restaurant-info">
+
+            <h3>
+              Sweet Treats
+            </h3>
+
+            <p>
+              Desserts • Cakes • Ice Cream
+            </p>
+
+            <div class="rating">
+              ⭐ 4.6
+              <span> • 20 mins • ₹250 for two</span>
+            </div>
+
+            <button
+              onclick="addToCart('Chocolate Cake', 159)">
+              Add Cake ₹159
+            </button>
+
+          </div>
+
+        </div>
+
+
+        <!-- DRINKS -->
+
+        <div
+          class="restaurant-card"
+          data-category="drinks">
+
+          <div class="food-image drinks">
+
+            🥤
+
+            <div class="offer">
+              20% OFF
+            </div>
+
+          </div>
+
+          <div class="restaurant-info">
+
+            <h3>
+              Fresh Sip Cafe
+            </h3>
+
+            <p>
+              Beverages • Juices • Cafe
+            </p>
+
+            <div class="rating">
+              ⭐ 4.4
+              <span> • 15 mins • ₹200 for two</span>
+            </div>
+
+            <button
+              onclick="addToCart('Fresh Mango Juice', 99)">
+              Add Juice ₹99
+            </button>
+
+          </div>
+
+        </div>
+
+      </div>
+
+    </section>
+
+  </main>
+
+
+  <!-- =========================
+       CART MODAL
+  ========================== -->
+
+  <div
+    class="cart-modal"
+    id="cartModal">
+
+    <div class="cart-content">
+
+      <div class="cart-header">
+
+        <h2>
+          Your Cart
+        </h2>
+
+        <button onclick="closeCart()">
+          ×
+        </button>
+
+      </div>
+
+
+      <div id="cartItems">
+
+        <div class="empty-cart">
+
+          <p>
+            Your cart is empty 🛒
+          </p>
+
+          <p>
+            Add some delicious food!
+          </p>
+
+        </div>
+
+      </div>
+
+
+      <div class="cart-total">
+
+        <strong>
+          Total
+        </strong>
+
+        <strong id="cartTotal">
+          ₹0
+        </strong>
+
+      </div>
+
+
+      <button
+        class="checkout-btn"
+        onclick="checkout()">
+
+        Proceed to Checkout
+
+      </button>
+
+    </div>
+
+  </div>
+
+
+  <!-- =========================
+       LOGIN MODAL
+  ========================== -->
+
+  <div
+    class="login-modal"
+    id="loginModal">
+
+    <div class="login-content">
+
+      <button
+        class="close-login"
+        onclick="closeLogin()">
+
+        ×
+
+      </button>
+
+
+      <div class="login-logo">
+        AVIZ<span>.</span>
+      </div>
+
+
+      <h2>
+        Welcome Back!
+      </h2>
+
+
+      <p>
+        Login to continue ordering your favourite food.
+      </p>
+
+
+      <form onsubmit="handleLogin(event)">
+
+        <label for="loginEmail">
+          Email Address
+        </label>
+
+        <input
+          type="email"
+          id="loginEmail"
+          placeholder="Enter your email"
+          required
+        >
+
+
+        <label for="loginPassword">
+          Password
+        </label>
+
+        <input
+          type="password"
+          id="loginPassword"
+          placeholder="Enter your password"
+          required
+        >
+
+
+        <button
+          type="submit"
+          class="login-submit">
+
+          Login
+
+        </button>
+
+      </form>
+
+
+      <p class="register-text">
+
+        Don't have an account?
+
+        <button onclick="registerUser()">
+          Register
+        </button>
+
+      </p>
+
+    </div>
+
+  </div>
+
+
+  <!-- =========================
+       FOOTER
+  ========================== -->
+
+  <footer>
+
+    <div class="footer-content">
+
+      <div>
+
+        <div class="logo">
+          AVIZ<span>.</span>
+        </div>
+
+        <p>
+          Delicious food delivered to your doorstep.
+        </p>
+
+      </div>
+
+
+      <div>
+
+        <h4>
+          Company
+        </h4>
+
+        <p>
+          About Us
+        </p>
+
+        <p>
+          Careers
+        </p>
+
+        <p>
+          Contact Us
+        </p>
+
+      </div>
+
+
+      <div>
+
+        <h4>
+          Support
+        </h4>
+
+        <p>
+          Help Center
+        </p>
+
+        <p>
+          Terms & Conditions
+        </p>
+
+        <p>
+          Privacy Policy
+        </p>
+
+      </div>
+
+    </div>
+
+
+    <div class="copyright">
+
+      © 2026 AVIZ Food Delivery. All rights reserved.
+
+    </div>
+
+  </footer>
+
+
+  <!-- JavaScript -->
+
+  <script src="script.js"></script>
+
+</body>
+
+</html>
