@@ -1,0 +1,16 @@
+{
+  "name": "aviz-order-app",
+  "version": "1.0.0",
+  "description": "Sample e-commerce order management app for GitNexus demo - Aviz Academy",
+  "main": "src/app.js",
+  "scripts": {
+    "start": "node src/server.js",
+    "test": "jest"
+  },
+  "dependencies": {
+    "express": "^5.1.0"
+  },
+  "devDependencies": {
+    "jest": "^29.0.0"
+  }
+}
